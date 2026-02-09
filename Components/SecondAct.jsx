@@ -1,6 +1,10 @@
+import useMovieDetails from "../Hooks/useMovieDetails";
 import { OFFICIAL_POSTER, SEC_ACT_POSTER } from "../Utils/mockData";
 
 export default function SecondAct() {
+  const { movie, loading, error } = useMovieDetails(1368337);
+  if (loading) return null;
+  if (error) return <p>Error Here!</p>;
   return (
     <section className=" relative w-full min-h-[120svh] bg-[#111827] text-[#B89B5E] overflow-hidden">
       <img
@@ -10,9 +14,12 @@ export default function SecondAct() {
       />
       <div className=" absolute inset-0 bg-black/70 z-0" />
 
-      <h1 className=" absolute top-1 left-1/2 -translate-x-1/2 text-[9vw] tracking-[0.14em] leading-none select-none  pointer-events-none z-0 font-roman ">
-        17.07.2026
-      </h1>
+      <div className="flex flex-col items-center justify-center -mb-24">
+        <div className="text-[8vw] font-roman tracking-[0.2em] opacity-30 leading-none">
+          17 JULY 2026
+        </div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-[25vh]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
           {/* Poster Column */}
@@ -71,19 +78,39 @@ export default function SecondAct() {
             <div className="space-y-6 mt-6">
               {/* Synopsis content */}
               <div className="space-y-6 max-w-xl ">
-                <p className="text-[#cc0809] uppercase tracking-[0.35em] text-xs font-semibold">
-                  Synopsis
+                <p className="text-[#B89B5E] uppercase tracking-[0.35em] text-xs font-semibold">
+                  Overview
                 </p>
 
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[#cc0809]">
-                  DEFY THE GODS
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[#6c86ab] tracking-wider font-roman mb-1">
+                  {movie?.title}
                 </h2>
+                <div className=" text-[#cc0809] tracking-wider uppercase font-semibold leading-snug ">
+                  {movie?.tagline}
+                </div>
+                {movie?.genres && (
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {movie.genres.map((genre) => (
+                      <span
+                        key={genre.id}
+                        className="
+          text-[11px]
+          uppercase
+          tracking-widest
+          px-3 py-1
+          border border-[#B89B5E]/40
+          text-[#B89B5E]
+          rounded-full
+        "
+                      >
+                        {genre.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
                 <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-                  After decades lost at sea and beyond the known world, a
-                  battle-scarred hero must confront gods, monsters, and destiny
-                  itself to return home. Every choice bends the threads of time,
-                  love, and legacy.
+                  {movie?.overview}
                 </p>
               </div>
             </div>
