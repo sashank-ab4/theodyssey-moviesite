@@ -81,9 +81,9 @@ export default function SecondAct() {
 
                 <p className="text-gray-300 leading-relaxed text-base md:text-lg">
                   After decades lost at sea and beyond the known world, a
-                  battle-scarred hero must confront gods, monsters, and destiny
-                  itself to return home. Every choice bends the threads of time,
-                  love, and legacy.
+                  battle-scarred hero must be confront gods, monsters, and
+                  destiny itself to return home. Every choice bends the threads
+                  of time, love, and legacy.
                 </p>
               </div>
             </div>
