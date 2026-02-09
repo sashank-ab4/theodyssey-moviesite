@@ -47,8 +47,7 @@ export default function SecondAct() {
         font-semibold
         tracking-wide
         transition-all duration-300
-        hover:bg-[#8c6a3f]
-        
+        hover:bg-[#8c6a3f] 
       "
               >
                 Watch Trailer
