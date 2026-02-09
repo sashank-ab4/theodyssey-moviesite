@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  --font-roman: "Cinzel", serif;
+}
+
+@layer utilities {
+  .font-roman {
+    font-family: var(--font-roman);
+  }
+}
