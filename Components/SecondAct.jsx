@@ -5,6 +5,19 @@ export default function SecondAct() {
   const { movie, loading, error } = useMovieDetails(1368337);
   if (loading) return null;
   if (error) return <p>Error Here!</p>;
+
+  const addToCalendar = () => {
+    const movieTitle = movie.title;
+    const description =
+      "Experience the Epic Journey on the Big Screen- Shot entirely with IMAX Cameras";
+    /* const releaseDate = movie.release_date; */
+    const startDate = "20260717T090000Z";
+    const endDate = "20260724T120000Z";
+
+    const calendarUrl = `https://calendar.google.com/calendar/u/0/r/eventedit?text=${encodeURIComponent(movieTitle)}&details=${encodeURIComponent(description)}&location=Theaters+Worldwide&dates=${startDate}/${endDate}`;
+
+    window.open(calendarUrl, "_blank", "noopener");
+  };
   return (
     <section className=" relative w-full min-h-[120svh] bg-[#111827] text-[#B89B5E] overflow-hidden">
       <img
@@ -55,6 +68,7 @@ export default function SecondAct() {
 
               {/* Add to Calendar */}
               <button
+                onClick={addToCalendar}
                 className="
         px-6 py-3
         rounded-3xl
@@ -66,7 +80,7 @@ export default function SecondAct() {
          font-semibold
       "
               >
-                Add to Calendar
+                Save the Date
               </button>
             </div>
           </div>

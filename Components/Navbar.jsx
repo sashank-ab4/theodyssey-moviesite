@@ -1,7 +1,7 @@
 import { TITLE_LOGO } from "../Utils/mockData";
 import { LuMenu } from "react-icons/lu";
 
-export default function Navbar({ openMenu }) {
+export default function Navbar({ onMenuClick }) {
   return (
     <>
       <header className="absolute top-8 left-3 right-8 z-50">
@@ -12,7 +12,7 @@ export default function Navbar({ openMenu }) {
             className="w-32 sm:w-48 transition-transform duration-300 hover:scale-105 active:scale-95 cursor-pointer"
           />
           <button
-            onClick={openMenu}
+            onClick={onMenuClick}
             aria-label="Open-Menu"
             className=" text-[#6c86ab] cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95 "
           >

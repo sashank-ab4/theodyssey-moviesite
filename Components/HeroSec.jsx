@@ -49,8 +49,8 @@ const HeroSec = () => {
           {/* Label with a small glowing line for extra "Epic" vibes */}
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-linear-to-r from-transparent to-white/50 " />
-            <p className="text-[#1B2A41] uppercase tracking-[0.4em] text-[15px] md:text-xs font-bold drop-shadow-md">
-              Epic Adventure Begins In
+            <p className="text-[#f1f0f6] uppercase tracking-[0.4em] text-[20px] font-roman font-bold drop-shadow-md">
+              AN EPIC JOURNEY BEGINS IN
             </p>
           </div>
 
