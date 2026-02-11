@@ -5,6 +5,7 @@ import {
   FaYoutube,
   FaArrowUpLong,
 } from "react-icons/fa6";
+import SocialMediaHnadles from "./SocialMediaHnadles";
 
 export default function ThirdAct() {
   function scrollToTop() {
@@ -41,35 +42,7 @@ export default function ThirdAct() {
           Made with 💙 for Christopher Nolan!
         </p>
 
-        <div className=" flex items-center gap-7">
-          <a
-            href="https://www.instagram.com/theodysseymovie/?hl=en"
-            className="transition-all duration-300 ease-out
-    hover:text-[#e7cc65]
-    hover:-translate-y-1
-    hover:drop-shadow-[0_0_12px_rgba(231,204,101,0.4)]"
-          >
-            <FaInstagram size={20} />
-          </a>
-          <a
-            href="https://x.com/odysseymovie?lang=en"
-            className=" transition-all duration-300 ease-out
-    hover:text-[#e7cc65]
-    hover:-translate-y-1
-    hover:drop-shadow-[0_0_12px_rgba(231,204,101,0.4)]"
-          >
-            <FaXTwitter size={20} />
-          </a>
-          <a
-            href="https://www.youtube.com/@UniversalPictures"
-            className="transition-all duration-300 ease-out
-    hover:text-[#e7cc65]
-    hover:-translate-y-1
-    hover:drop-shadow-[0_0_12px_rgba(231,204,101,0.4)]"
-          >
-            <FaYoutube size={20} />
-          </a>
-        </div>
+        <SocialMediaHnadles className="mt-3 justify-center" />
         <button
           onClick={scrollToTop}
           className=" fixed bottom-6 right-6 text-[#b89b5e] border border-[#B89B5E]/40 rounded-full p-2 cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-out"
