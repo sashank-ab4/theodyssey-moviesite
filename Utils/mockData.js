@@ -14,7 +14,7 @@ export const THIRD_ACT_POSTER =
   "https://image.tmdb.org/t/p/original/s4qVVLNlK6OEvIm5V3yiGCepEBo.png";
 
 export const MENU_BG_IMG =
-  "https://media.themoviedb.org/t/p/w1000_and_h563_face/sHoTC2lSkoIah6TcjUHaTFUTgXD.jpg";
+  "https://image.tmdb.org/t/p/original/s4qVVLNlK6OEvIm5V3yiGCepEBo.png";
 
 export const MENU_TITLE =
   "https://image.tmdb.org/t/p/original/s4qVVLNlK6OEvIm5V3yiGCepEBo.png";
@@ -28,3 +28,7 @@ Christopher Nolans next film, The Odyssey, is a mythic action epic shot across t
 The Odyssey stars Matt Damon, Tom Holland, Anne Hathaway, Robert Pattinson and Lupita Nyongo, with Zendaya and Charlize Theron.
 
 The Odyssey is produced by Emma Thomas and Christopher Nolan for their company, Syncopy. The executive producer is Thomas Hayslip.`;
+
+export const TRAILER_ID = "Mzw2ttJD2qQ";
+export const MOB_IMG =
+  "https://image.tmdb.org/t/p/original/3SSHZIMQucAsVgIvi6fmBh5gRsj.jpg";
