@@ -4,7 +4,7 @@ import { LuMenu } from "react-icons/lu";
 export default function Navbar({ onMenuClick }) {
   return (
     <>
-      <header className="absolute top-8 left-3 right-8 z-50">
+      <header className="absolute top-12 left-7 right-10 z-50">
         <div className="flex items-center justify-between ">
           <img
             src={TITLE_LOGO}
@@ -16,7 +16,7 @@ export default function Navbar({ onMenuClick }) {
             aria-label="Open-Menu"
             className=" text-[#6c86ab] cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95 "
           >
-            <LuMenu size={20} />
+            <LuMenu size={22} />
           </button>
         </div>
       </header>

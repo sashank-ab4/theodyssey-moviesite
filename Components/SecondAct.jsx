@@ -1,8 +1,12 @@
+import { useState } from "react";
 import useMovieDetails from "../Hooks/useMovieDetails";
 import { OFFICIAL_POSTER, SEC_ACT_POSTER } from "../Utils/mockData";
+import Modal from "./Modal";
 
 export default function SecondAct() {
+  const [isTrailerOpen, setIsTrailerOpen] = useState(false);
   const { movie, loading, error } = useMovieDetails(1368337);
+
   if (loading) return null;
   if (error) return <p>Error Here!</p>;
 
@@ -52,10 +56,11 @@ export default function SecondAct() {
             <div className="flex flex-col gap-6 justify-center pb-8">
               {/* Watch Trailer */}
               <button
+                onClick={() => setIsTrailerOpen(true)}
                 className="
         px-6 py-3
         rounded-3xl
-        border border-[#B89B5E]/40
+        border border-[#B89B5E]
         text-[#e5e7eb]
         font-semibold
         tracking-wide
@@ -65,6 +70,10 @@ export default function SecondAct() {
               >
                 Watch Trailer
               </button>
+              <Modal
+                isOpen={isTrailerOpen}
+                onClose={() => setIsTrailerOpen(false)}
+              />
 
               {/* Add to Calendar */}
               <button
@@ -72,7 +81,7 @@ export default function SecondAct() {
                 className="
         px-6 py-3
         rounded-3xl
-        border border-[#cc0809]/40
+        border border-[#cc0809]
         text-[#e5e7eb]
         tracking-wide
         transition-all duration-300
