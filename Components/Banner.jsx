@@ -44,8 +44,11 @@ export default function Banner({ heroRef }) {
   if (!visible) return null;
   return (
     <div
-      className="
-         absolute top-0 left-0 w-full z-30 "
+      className={`
+    absolute top-0 left-0 w-full z-30
+    transform transition-all duration-500 ease-out
+    ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+  `}
     >
       <div
         className="
@@ -63,8 +66,8 @@ export default function Banner({ heroRef }) {
           transition-opacity duration-500
         "
       >
-        An independent <span className="text-[#b89b5e]">fan tribute.</span> Not
-        affiliated with Official studio promotions
+        A <span className="text-[#b89b5e]">fan tribute.</span> Not affiliated
+        with Official studio promotions
         <button
           onClick={() => setDismissed(true)}
           className="absolute top-3 right-2 text-white hover:text-[#b89b5e] transition"
