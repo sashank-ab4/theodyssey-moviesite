@@ -31,4 +31,4 @@ The Odyssey is produced by Emma Thomas and Christopher Nolan for their company, 
 
 export const TRAILER_ID = "Mzw2ttJD2qQ";
 export const MOB_IMG =
-  "https://image.tmdb.org/t/p/original/3SSHZIMQucAsVgIvi6fmBh5gRsj.jpg";
+  "https://preview.redd.it/first-image-of-matt-damon-as-odysseus-in-christopher-nolans-v0-ezcasqic4qje1.jpeg?width=1080&crop=smart&auto=webp&s=6044628e60da2dd47581fa6a1c5570a9a85aebba";

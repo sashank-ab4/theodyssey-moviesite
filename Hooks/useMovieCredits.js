@@ -8,17 +8,18 @@ export default function useMovieCredits(movieId) {
 
   useEffect(() => {
     if (!movieId) return;
+
     const fetchCredits = async () => {
       try {
         const data = await getMovieCredits(movieId);
-        console.log("credits data", data);
+        /* await new Promise((resolve) => setTimeout(resolve, 2000)); */
+
         setCast(data.cast || []);
         setCrew(data.crew || []);
       } catch (err) {
         setError(err.message || "Failed to load credits!");
       } finally {
         setLoading(false);
-        console.log("loading false");
       }
     };
     fetchCredits();
