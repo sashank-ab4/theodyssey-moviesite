@@ -2,10 +2,29 @@
 
 :root {
   --font-roman: "Cinzel", serif;
+  --font-mont: "Montserrat", serif;
 }
 
 @layer utilities {
   .font-roman {
     font-family: var(--font-roman);
   }
+  .font-mont {
+    font-family: var(--font-mont);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.2s infinite linear;
 }
