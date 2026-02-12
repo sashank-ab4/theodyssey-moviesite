@@ -8,6 +8,7 @@ import CastTab from "../Components/CastTab";
 import CrewTab from "../Components/CrewTab";
 import Synopsis from "../Components/Synopsis";
 import GalleryTab from "../Components/GalleryTab";
+import NetworkError from "../Components/NetWorkError";
 
 const RootLayout = () => {
   /* const [isMenuOpen, setIsMenuOpen] = useState(false); */
@@ -20,48 +21,53 @@ const RootLayout = () => {
   };
   const showFooter = pagesWithFooter.includes(currentView);
   return (
-    <div className="min-h-screen flex flex-col bg-[#05060A] text-white overflow-x-hidden">
-      {/* MAIN CONTENT */}
-      <main className="flex-grow">
-        {currentView === "home" && (
-          <Navbar onMenuClick={() => navigateTo("menu")} />
-        )}
+    <>
+      <NetworkError />
 
-        {currentView === "home" && (
-          <>
-            <HeroSec />
-            <SecondAct />
-            <ThirdAct />
-          </>
-        )}
+      <div className="min-h-screen flex flex-col bg-[#05060A] text-white overflow-x-hidden">
+        {/* MAIN CONTENT */}
 
-        {currentView === "cast" && (
-          <CastTab onBack={() => navigateTo("menu")} />
-        )}
+        <main className="flex-grow">
+          {currentView === "home" && (
+            <Navbar onMenuClick={() => navigateTo("menu")} />
+          )}
 
-        {currentView === "crew" && (
-          <CrewTab onBack={() => navigateTo("menu")} />
-        )}
+          {currentView === "home" && (
+            <>
+              <HeroSec />
+              <SecondAct />
+              <ThirdAct />
+            </>
+          )}
 
-        {currentView === "synopsis" && (
-          <Synopsis onBack={() => navigateTo("menu")} />
-        )}
+          {currentView === "cast" && (
+            <CastTab onBack={() => navigateTo("menu")} />
+          )}
 
-        {currentView === "gallery" && (
-          <GalleryTab onBack={() => navigateTo("menu")} />
-        )}
+          {currentView === "crew" && (
+            <CrewTab onBack={() => navigateTo("menu")} />
+          )}
 
-        {currentView === "menu" && (
-          <MenuOverlay
-            onNavigate={navigateTo}
-            onClose={() => navigateTo("home")}
-          />
-        )}
-      </main>
+          {currentView === "synopsis" && (
+            <Synopsis onBack={() => navigateTo("menu")} />
+          )}
 
-      {/* FOOTER */}
-      {showFooter && <ThirdAct />}
-    </div>
+          {currentView === "gallery" && (
+            <GalleryTab onBack={() => navigateTo("menu")} />
+          )}
+
+          {currentView === "menu" && (
+            <MenuOverlay
+              onNavigate={navigateTo}
+              onClose={() => navigateTo("home")}
+            />
+          )}
+        </main>
+
+        {/* FOOTER */}
+        {showFooter && <ThirdAct />}
+      </div>
+    </>
   );
 };
 

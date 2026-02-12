@@ -12,7 +12,7 @@ const HeroSec = () => {
       <Banner heroRef={heroRef} />
       <section
         ref={heroRef}
-        className="group relative w-full min-h-[100svh] overflow-hidden"
+        className="group relative w-full min-h-svh overflow-hidden"
       >
         {/* Background Image */}
         <img

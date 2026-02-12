@@ -109,7 +109,7 @@ export default function SecondAct() {
                 Overview
               </p>
 
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[#6c86ab] tracking-wider font-roman">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[#6c86ab] tracking-widest font-mont uppercase">
                 {movie?.title}
               </h2>
 
