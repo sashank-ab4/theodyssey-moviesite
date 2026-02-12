@@ -28,12 +28,10 @@ export default function CraftCredits({ crew }) {
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Heading */}
       <h4 className="text-[#B89B5E] uppercase tracking-[0.3em] text-sm mb-4">
         Credits
       </h4>
 
-      {/* Crew List */}
       {visibleCrew.map((member) => (
         <div key={member.id} className="flex flex-col">
           <span className="text-white font-semibold tracking-wide">
@@ -46,7 +44,6 @@ export default function CraftCredits({ crew }) {
         </div>
       ))}
 
-      {/* Show More */}
       {uniqueCrew.length > 6 && (
         <button
           onClick={() => setExpanded(!expanded)}

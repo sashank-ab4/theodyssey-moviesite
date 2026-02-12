@@ -14,7 +14,6 @@ const HeroSec = () => {
         ref={heroRef}
         className="group relative w-full min-h-svh overflow-hidden"
       >
-        {/* Background Image */}
         <img
           src={HERO_IMG}
           alt="Movie Poster"
@@ -53,7 +52,6 @@ const HeroSec = () => {
         {/* Full Overlay Gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-0" />
 
-        {/* Countdown Content */}
         <div
           className="
           absolute

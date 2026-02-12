@@ -51,10 +51,8 @@ export default function ImageCarousel({ images = [] }) {
         ))}
       </div>
 
-      {/* Dark Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-      {/* Prev Button */}
       <button
         onClick={previousSlide}
         className="
@@ -71,7 +69,6 @@ export default function ImageCarousel({ images = [] }) {
         <IoChevronBack size={18} className="sm:w-[22px] sm:h-[22px]" />
       </button>
 
-      {/* Next Button */}
       <button
         onClick={nextSlide}
         className="
@@ -88,7 +85,6 @@ export default function ImageCarousel({ images = [] }) {
         <IoChevronForward size={18} className="sm:w-[22px] sm:h-[22px]" />
       </button>
 
-      {/* Pagination Dots */}
       <div className="absolute bottom-3 sm:bottom-5 left-0 w-full flex justify-center gap-2 sm:gap-4">
         {images.map((_, index) => (
           <button

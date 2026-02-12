@@ -48,7 +48,6 @@ export default function Modal({ isOpen, onClose }) {
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 text-white hover:opacity-70 transition"
@@ -56,7 +55,6 @@ export default function Modal({ isOpen, onClose }) {
           <IoCloseOutline size={28} />
         </button>
 
-        {/* Trailer */}
         <iframe
           src={`https://www.youtube.com/embed/${TRAILER_ID}?autoplay=1&mute=0&controls=1&rel=0`}
           className="w-full h-full"

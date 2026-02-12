@@ -1,10 +1,5 @@
 import { THIRD_ACT_POSTER } from "../Utils/mockData";
-import {
-  FaInstagram,
-  FaXTwitter,
-  FaYoutube,
-  FaArrowUpLong,
-} from "react-icons/fa6";
+import { FaArrowUpLong } from "react-icons/fa6";
 import SocialMediaHnadles from "./SocialMediaHnadles";
 
 export default function ThirdAct() {
@@ -41,7 +36,7 @@ export default function ThirdAct() {
           {" "}
           Made with 💙 for Christopher Nolan!
         </p>
-
+        {/* Global Component-reusable one */}
         <SocialMediaHnadles className="mt-3 justify-center" />
         <button
           onClick={scrollToTop}

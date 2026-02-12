@@ -11,12 +11,9 @@ export default function Synopsis({ onBack }) {
   return (
     <section className="relative w-full bg-[#05060A] py-14">
       <div className="relative max-w-7xl mx-auto px-6 md:px-12 text-white">
-        {/* SECTION HEADING */}
         <CommonBanners title="SYNOPSIS" onBack={onBack} />
 
-        {/* CONTENT GRID */}
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_280px] gap-20 items-start">
-          {/* LEFT — POSTER */}
           <div className="flex justify-center md:justify-start">
             <img
               src={SYNOPSIS_IMG}
@@ -44,13 +41,12 @@ export default function Synopsis({ onBack }) {
                 {SYN_CONTENT}
               </p>
 
-              {/* Gradient Fade when collapsed */}
+              {/* Gradient Fade */}
               {!expanded && (
                 <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent pointer-events-none" />
               )}
             </div>
 
-            {/* Toggle Button */}
             <div className="mt-6">
               <button
                 onClick={() => setExpanded(!expanded)}

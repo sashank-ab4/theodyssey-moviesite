@@ -26,7 +26,6 @@ export default function MenuOverlay({ onClose, onNavigate }) {
       className="fixed inset-0 z-100 transform transition-all duration-500 ease-out"
       onClick={onClose}
     >
-      {/* Background image */}
       <img
         src="/menuImg.jpg"
         alt="Menu Background"
@@ -56,7 +55,6 @@ export default function MenuOverlay({ onClose, onNavigate }) {
         />
       </div>
 
-      {/* Close button (always top-right) */}
       <button
         onClick={onClose}
         className="
@@ -71,7 +69,6 @@ export default function MenuOverlay({ onClose, onNavigate }) {
         <IoCloseOutline size={30} />
       </button>
 
-      {/* Menu content */}
       <div
         className="relative z-30 h-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}

@@ -6,7 +6,6 @@ export default function CountdownDisplay() {
 
   return (
     <div className="flex items-end gap-5 sm:gap-8">
-      {/* UNIT */}
       {[
         { label: "Days", value: days },
         { label: "Hours", value: hours },
@@ -26,7 +25,6 @@ export default function CountdownDisplay() {
               flex items-center justify-center
             "
           >
-            {/* subtle inner glow */}
             <div className="absolute inset-0 rounded-xl shadow-[inset_0_0_20px_rgba(231,204,101,0.12)]" />
 
             <span
@@ -48,7 +46,7 @@ export default function CountdownDisplay() {
             {item.label}
           </span>
 
-          {/* Separator dots (except last) */}
+          {/* dots, except last */}
           {idx !== 3 && (
             <span className="hidden sm:block absolute right-[-18px] top-[45%] text-[#e7cc65]/30 text-3xl">
               ·

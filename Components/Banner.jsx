@@ -5,7 +5,6 @@ export default function Banner({ heroRef }) {
   const [isHeroVisible, setIsHeroVisible] = useState(true);
   const [dismissed, setDismissed] = useState(false);
 
-  // ⏳ Show after 2 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAfterDelay(true);
@@ -20,7 +19,6 @@ export default function Banner({ heroRef }) {
     };
   }, []);
 
-  // hero visibility
   useEffect(() => {
     if (!heroRef?.current) return;
 
@@ -29,7 +27,7 @@ export default function Banner({ heroRef }) {
         setIsHeroVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // 10% visible counts as visible
+        threshold: 0.1,
       },
     );
 
@@ -70,7 +68,6 @@ export default function Banner({ heroRef }) {
           with official studio promotions.
         </div>
 
-        {/* Close Button */}
         <button
           onClick={() => setDismissed(true)}
           className="

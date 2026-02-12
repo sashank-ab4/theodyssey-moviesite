@@ -20,7 +20,7 @@ const useCountdown = (releaseDate) => {
       setTimeLeft(calculateTimeLeft(releaseDate));
     }, 1000);
 
-    // Cleanup to prevent memory leaks, ensuring application reliability
+    // Cleanup function to prevent memory leaks
     return () => clearInterval(timer);
   }, [releaseDate]);
 

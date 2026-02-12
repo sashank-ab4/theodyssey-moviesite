@@ -49,7 +49,7 @@ export default function SecondAct() {
               alt="Movie Poster"
               className="
           w-[220px] sm:w-[260px] md:w-[300px]
-          aspect-[2/3]
+          aspect-2/3
           rounded-xl
           shadow-2xl
           transition-transform duration-700
