@@ -12,7 +12,7 @@ export default function Banner({ heroRef }) {
     }, 2000);
     const hide = setTimeout(() => {
       setShowAfterDelay(false);
-    }, 7000);
+    }, 60 * 1000);
 
     return () => {
       clearTimeout(timer);
@@ -45,34 +45,44 @@ export default function Banner({ heroRef }) {
   return (
     <div
       className={`
-    absolute top-0 left-0 w-full z-30
+    fixed top-0 left-0 w-full z-40
     transform transition-all duration-500 ease-out
     ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
   `}
     >
       <div
         className="
-        w-full
-          relative mt-0
-           bg-black/70 backdrop-blur-none
-          text-[#6c86ab]
-          text-[10px] sm:text-xs
-          uppercase tracking-widest
-          px-6 py-3 
-          
-          text-center
-          border border-[#b89b5e]/40 border-t-0 border-r-0
-          shadow-[0_0_25px_rgba(184,155,94,0.25)]
-          transition-opacity duration-500
-        "
+        
+      relative w-full
+      bg-black/80 backdrop-blur-sm
+      text-[#6c86ab]
+      text-[11px] sm:text-xs md:text-sm
+      uppercase tracking-[0.2em] sm:tracking-widest
+      px-4 sm:px-6 md:px-8
+      py-2 sm:py-3 md:py-4
+      text-center
+      border-b border-[#b89b5e]/40
+      shadow-[0_0_25px_rgba(184,155,94,0.25)]
+    "
       >
-        A <span className="text-[#b89b5e]">fan tribute.</span> Not affiliated
-        with Official studio promotions
+        <div className="max-w-6xl mx-auto">
+          A <span className="text-[#b89b5e]">fan tribute.</span> Not affiliated
+          with official studio promotions.
+        </div>
+
+        {/* Close Button */}
         <button
           onClick={() => setDismissed(true)}
-          className="absolute top-3 right-2 text-white hover:text-[#b89b5e] transition"
+          className="
+        absolute right-3 sm:right-5 top-1/2
+        -translate-y-1/2
+        text-white/70
+        hover:text-[#b89b5e]
+        transition
+      "
+          aria-label="Close Banner"
         >
-          <IoCloseOutline size={18} />
+          <IoCloseOutline size={18} className="sm:w-5 sm:h-5" />
         </button>
       </div>
     </div>

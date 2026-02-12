@@ -11,7 +11,6 @@ const CRAFT_JOBS_FOR_CREW_PAGE = [
   "Costume Design",
   "Stunt Coordinator",
   "Casting",
-  "Set Decoration",
   "Production Design",
   "Special Effects Supervisor",
 ];

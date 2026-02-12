@@ -6,7 +6,7 @@ import CraftCredits from "./CraftCredits";
 
 export default function Synopsis({ onBack }) {
   const { crew, loading } = useMovieCredits(1368337);
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   return (
     <section className="relative w-full bg-[#05060A] py-14">

@@ -60,11 +60,11 @@ export default function MenuOverlay({ onClose, onNavigate }) {
       <button
         onClick={onClose}
         className="
-      fixed top-8 right-8
+      fixed top-12 right-9
       z-40
       text-[#B89B5E]
       hover:opacity-80
-      transition
+      transition cursor-pointer
     "
         aria-label="Close Menu"
       >
@@ -81,7 +81,7 @@ export default function MenuOverlay({ onClose, onNavigate }) {
             <button
               key={item.view}
               onClick={() => onNavigate(item.view)}
-              className="
+              className=" cursor-pointer
             font-roman
             uppercase
             tracking-[0.35em]

@@ -49,6 +49,17 @@ export default function ThirdAct() {
         >
           <FaArrowUpLong size={25} />
         </button>
+        <div className="text-center text-[11px] tracking-widest text-white/60 mt-2">
+          Crafted by{" "}
+          <a
+            href="https://linkedin.com/in/https://www.linkedin.com/in/sashank-akkabattula-22a311247/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#6c86ab] uppercase hover:text-[#B89B5E] transition"
+          >
+            Sashank AB
+          </a>
+        </div>
       </div>
     </footer>
   );

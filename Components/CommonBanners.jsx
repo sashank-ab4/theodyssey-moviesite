@@ -5,7 +5,7 @@ export default function CommonBanners({ title, onBack }) {
       {/* Back button — top left */}
       <button
         onClick={onBack}
-        className="absolute left-6 md:left-12 top-0 flex items-center gap-2 text-sm text-[#b89b5e] hover:opacity-80 transition"
+        className="absolute left-6 md:left-12 top-0 flex items-center cursor-pointer gap-2 text-sm text-[#b89b5e] hover:opacity-80 transition"
       >
         <IoArrowBackOutline size={18} />
         <span className="uppercase tracking-widest">Back</span>
