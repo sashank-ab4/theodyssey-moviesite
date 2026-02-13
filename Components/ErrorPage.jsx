@@ -2,7 +2,7 @@ import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
   const err = useRouteError();
-  console.log(err);
+
   return (
     <>
       <div className="text-center py-16">

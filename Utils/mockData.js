@@ -22,12 +22,11 @@ export const MENU_TITLE =
 export const SYNOPSIS_IMG =
   "https://preview.redd.it/first-image-of-matt-damon-as-odysseus-in-christopher-nolans-v0-ezcasqic4qje1.jpeg?width=1080&crop=smart&auto=webp&s=6044628e60da2dd47581fa6a1c5570a9a85aebba";
 
-export const SYN_CONTENT = `
-Christopher Nolans next film, The Odyssey, is a mythic action epic shot across the world using brand new IMAX® film technology. The film brings Homers foundational saga to IMAX® film screens for the first time and opens in theaters everywhere on July 17, 2026. 
+export const SYN_CONTENT = `Christopher Nolan's next film, The Odyssey, is a mythic action epic shot across the world using brand new IMAX® film technology. 
 
-The Odyssey stars Matt Damon, Tom Holland, Anne Hathaway, Robert Pattinson and Lupita Nyongo, with Zendaya and Charlize Theron.
+The film brings Homer's foundational saga to IMAX® film screens for the first time and opens in theaters everywhere on July 17, 2026 The Odyssey stars Matt Damon, Tom Holland, Anne Hathaway, Robert Pattinson and Lupita Nyongo, with Zendaya and Charlize Theron.
 
-The Odyssey is produced by Emma Thomas and Christopher Nolan for their company, Syncopy. The executive producer is Thomas Hayslip.`;
+The Odyssey is produced by Emma Thomas and Christopher Nolan for their company, Syncopy. The executive producer is Thomas Hayslip`;
 
 export const TRAILER_ID = "Mzw2ttJD2qQ";
 export const MOB_IMG =

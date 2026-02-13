@@ -17,14 +17,11 @@ const fetchFromTMDB = async (endpoint) => {
 export const getMovieDetails = (movieId) => {
   return fetchFromTMDB(`/movie/${movieId}`);
 };
-//console.log(getMovieDetails(1368337));
 
 export const getMovieCredits = (movieId) => {
   return fetchFromTMDB(`/movie/${movieId}/credits`);
 };
-console.log(getMovieCredits(1368337));
 
 export const getMovieMedia = (movieId) => {
   return fetchFromTMDB(`/movie/${movieId}/images`);
 };
-console.log(getMovieMedia(1368337));

@@ -11,9 +11,8 @@ export default function useMovieMedia(movieId) {
     const fetchMedia = async () => {
       try {
         const data = await getMovieMedia(movieId);
-        console.log(data?.backdrops);
+
         setBackgrounds(data.backdrops);
-        console.log(JSON.stringify(data, null, 2));
       } catch (error) {
         setError(error.message || "Failed to Fecth Data!");
       } finally {
