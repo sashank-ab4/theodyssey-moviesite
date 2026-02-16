@@ -5,7 +5,7 @@ export default function Navbar({ onMenuClick }) {
   return (
     <>
       <header className="absolute top-12 left-7 right-8 z-50">
-        <div className="flex items-center justify-between px-4 sm:px-6 ">
+        <div className="flex items-center justify-between px-3 ">
           <div
             className="
       whitespace-nowrap

@@ -62,6 +62,7 @@ export default function SecondAct() {
           <div className="flex flex-col gap-6 justify-center items-center lg:items-start">
             <button
               onClick={() => setIsTrailerOpen(true)}
+              alt="Movie-Trailer"
               className="
           w-full lg:w-auto
           px-6 py-3
@@ -100,7 +101,7 @@ export default function SecondAct() {
             />
           </div>
 
-          {/* RIGHT — OVERVIEW */}
+          {/* right-overview */}
           <div className="relative pl-0 lg:pl-8">
             <span className="hidden lg:block absolute left-0 top-0 h-full w-px bg-[#B89B5E]/40" />
 

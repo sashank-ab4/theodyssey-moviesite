@@ -12,7 +12,6 @@ export default function useMovieDetails(movieId) {
       try {
         const data = await getMovieDetails(movieId);
         setMovie(data);
-        console.log(data);
       } catch (err) {
         setError(err.message);
       } finally {

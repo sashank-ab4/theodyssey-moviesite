@@ -1,8 +1,26 @@
 import { THIRD_ACT_POSTER } from "../Utils/mockData";
 import { FaArrowUpLong } from "react-icons/fa6";
 import SocialMediaHnadles from "./SocialMediaHnadles";
+import { useEffect, useRef, useState } from "react";
 
 export default function ThirdAct() {
+  const footerRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // for scroll to up arrow visibility only @ footer
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }, // 30% visible
+    );
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+  // for scroll to top
   function scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -10,7 +28,7 @@ export default function ThirdAct() {
     });
   }
   return (
-    <footer className=" relative bg-[#05060A] text-[#6c86ab]">
+    <footer ref={footerRef} className=" relative bg-[#05060A] text-[#6c86ab]">
       <div className=" mb-6 inset-x-0 h-px bg-linear-to-r from-transparent via-[#6c86ab]/40 to-transparent" />
       <div className=" flex flex-col items-center justify-center text-center gap-4">
         <img
@@ -38,12 +56,15 @@ export default function ThirdAct() {
         </p>
         {/* Global Component-reusable one */}
         <SocialMediaHnadles className="mt-3 justify-center" />
+
         <button
           onClick={scrollToTop}
-          className=" fixed bottom-6 right-6 text-[#b89b5e] border border-[#B89B5E]/40 rounded-full p-2 cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-out"
+          className={`fixed bottom-6 right-6 text-[#b89b5e] border border-[#B89B5E]/40 rounded-full p-2 cursor-pointer hover:-translate-y-1 transition-all duration-300 ease-out 
+              ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
         >
           <FaArrowUpLong size={25} />
         </button>
+
         <div className="text-center text-[11px] tracking-widest text-white/60 mt-2">
           Crafted by{" "}
           <a

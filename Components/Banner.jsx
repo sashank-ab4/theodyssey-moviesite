@@ -75,7 +75,7 @@ export default function Banner({ heroRef }) {
         -translate-y-1/2
         text-white/70
         hover:text-[#b89b5e]
-        transition
+        transition cursor-pointer
       "
           aria-label="Close Banner"
         >

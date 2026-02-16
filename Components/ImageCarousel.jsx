@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 export default function ImageCarousel({ images = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  if (!images.length) return null;
+  const [isPaused, setIsPaused] = useState(false);
 
   const previousSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -14,8 +14,16 @@ export default function ImageCarousel({ images = [] }) {
   const goToSelected = (index) => {
     setCurrentIndex(index);
   };
+  useEffect(() => {
+    if (isPaused) return;
+    const autoPlay = setInterval(nextSlide, 3000);
+    return () => clearInterval(autoPlay);
+  }, [images.length, isPaused]);
+
   return (
     <div
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
       className="
         relative w-full
         max-w-6xl mx-auto
@@ -63,7 +71,7 @@ export default function ImageCarousel({ images = [] }) {
           rounded-full
           text-white
           hover:bg-black/70
-          transition
+          transition cursor-pointer
         "
       >
         <IoChevronBack size={18} className="sm:w-[22px] sm:h-[22px]" />
@@ -79,7 +87,7 @@ export default function ImageCarousel({ images = [] }) {
           rounded-full
           text-white
           hover:bg-black/70
-          transition
+          transition cursor-pointer
         "
       >
         <IoChevronForward size={18} className="sm:w-[22px] sm:h-[22px]" />

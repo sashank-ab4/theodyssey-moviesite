@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { HERO_IMG, MOB_IMG } from "../Utils/mockData";
 import CountdownDisplay from "./CountdownDisplay";
-import SecondAct from "./SecondAct";
 import Banner from "./Banner";
 
 const HeroSec = () => {
