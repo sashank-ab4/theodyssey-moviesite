@@ -14,17 +14,17 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -400px 0;
-  }
-  100% {
-    background-position: 400px 0;
-  }
+.shimmer {
+  background: linear-gradient(90deg, #2b2f3a 25%, #3a4150 50%, #2b2f3a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
 }
 
-.shimmer {
-  background: linear-gradient(90deg, #111 25%, #1c1c1c 50%, #111 75%);
-  background-size: 400px 100%;
-  animation: shimmer 1.2s infinite linear;
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

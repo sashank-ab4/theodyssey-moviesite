@@ -50,7 +50,7 @@ export default function ImageCarousel({ images = [] }) {
             className="
               w-full shrink-0
               object-cover
-              aspect-[16/9]
+              aspect-video
               sm:aspect-video
               transition-transform duration-700
               hover:scale-105
@@ -59,7 +59,7 @@ export default function ImageCarousel({ images = [] }) {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
       <button
         onClick={previousSlide}
