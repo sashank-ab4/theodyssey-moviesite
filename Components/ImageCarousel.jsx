@@ -16,7 +16,9 @@ export default function ImageCarousel({ images = [] }) {
   };
   useEffect(() => {
     if (isPaused) return;
-    const autoPlay = setInterval(nextSlide, 3000);
+    const autoPlay = setInterval(() => {
+      setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 3000);
     return () => clearInterval(autoPlay);
   }, [images.length, isPaused]);
 
@@ -24,8 +26,7 @@ export default function ImageCarousel({ images = [] }) {
     <div
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="
-        relative w-full
+      className={`relative w-full
         max-w-6xl mx-auto
         overflow-hidden
         rounded-xl sm:rounded-2xl
@@ -33,7 +34,7 @@ export default function ImageCarousel({ images = [] }) {
         hover:border-[#b89b5e]
         shadow-xl sm:shadow-2xl
         transition-all duration-300
-      "
+        `}
     >
       {/* Image Wrapper */}
       <div

@@ -12,8 +12,6 @@ export default function useMovieCredits(movieId) {
     const fetchCredits = async () => {
       try {
         const data = await getMovieCredits(movieId);
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-
         setCast(data.cast || []);
         setCrew(data.crew || []);
       } catch (err) {

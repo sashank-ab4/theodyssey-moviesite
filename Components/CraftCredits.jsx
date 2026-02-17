@@ -1,57 +1,34 @@
-import { useState } from "react";
-import CRAFT_JOBS from "../Utils/crafts";
+import { useMemo } from "react";
+import CRAFT_JOBS_FOR_SYN from "../Utils/craftsForSynopsis";
 
 export default function CraftCredits({ crew }) {
-  const [expanded, setExpanded] = useState(false);
-
-  const filtered = crew.filter((member) => CRAFT_JOBS.includes(member.job));
-
-  const groupedByPerson = filtered.reduce((acc, member) => {
-    const id = member.id;
-
-    if (!acc[id]) {
-      acc[id] = {
-        id: member.id,
-        name: member.name,
-        jobs: [member.job],
-      };
-    } else {
-      acc[id].jobs.push(member.job);
-    }
-
-    return acc;
-  }, {});
-
-  const uniqueCrew = Object.values(groupedByPerson);
-
-  const visibleCrew = expanded ? uniqueCrew : uniqueCrew.slice(0, 6);
+  const structuredCredits = useMemo(() => {
+    return CRAFT_JOBS_FOR_SYN.map(({ label, job }) => {
+      const people = crew
+        .filter((member) => member.job === job)
+        .map((member) => member.name);
+      if (!people.length) return null;
+      return { label, names: people };
+    }).filter(Boolean);
+  }, [crew]);
 
   return (
     <div className="flex flex-col gap-6">
-      <h4 className="text-[#B89B5E] uppercase tracking-[0.3em] text-sm mb-4">
+      <h4 className="text-[#B89B5E] uppercase tracking-[0.3em] text-sm mb-">
         Credits
       </h4>
 
-      {visibleCrew.map((member) => (
-        <div key={member.id} className="flex flex-col">
+      {structuredCredits.map(({ label, names }) => (
+        <div key={label} className="flex flex-col">
           <span className="text-white font-semibold tracking-wide">
-            {member.name}
+            {label}
           </span>
 
           <span className="text-white/60 text-sm mt-1">
-            {member.jobs.join(" • ")}
+            {names.join(" • ")}
           </span>
         </div>
       ))}
-
-      {uniqueCrew.length > 6 && (
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-[#B89B5E] uppercase tracking-widest text-xs hover:text-[#cc0809] transition mt-4"
-        >
-          {expanded ? "Show Less" : "Show More"}
-        </button>
-      )}
     </div>
   );
 }
