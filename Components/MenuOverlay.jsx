@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 /* import menuImg from "../assets/menuImg.jpg";
  */
 import { IoCloseOutline } from "react-icons/io5";
+import { LuShare } from "react-icons/lu";
 import { MENU_BG_IMG } from "../Utils/mockData";
 import SocialMediaHnadles from "./SocialMediaHnadles";
+import Toast from "./ShareToast";
 
 export default function MenuOverlay({ onClose, onNavigate }) {
+  const [toastOpen, setToastOpen] = useState(false);
   // Lock body scroll while menu page is active
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -22,10 +25,8 @@ export default function MenuOverlay({ onClose, onNavigate }) {
   ];
 
   return (
-    <div
-      className="fixed inset-0 z-100 transform transition-all duration-500 ease-out"
-      onClick={onClose}
-    >
+    <div className="fixed inset-0 z-100 transform transition-all duration-500 ease-out">
+      <div className=" absolute inset-0" onClick={onClose} />
       <img
         src="/menuImg.jpg"
         alt="Menu Background"
@@ -42,7 +43,10 @@ export default function MenuOverlay({ onClose, onNavigate }) {
       {/*       <div className="absolute inset-0 bg-black/60 z-10" />
        */}
       {/* Decorative title image (top center, subtle) */}
-      <div className="absolute inset-0 z-20 flex items-start justify-center pt-24 pointer-events-none">
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="absolute inset-0 z-20 flex items-start justify-center pt-24 pointer-events-none"
+      >
         <img
           src={MENU_BG_IMG}
           alt="Title-Date"
@@ -54,24 +58,45 @@ export default function MenuOverlay({ onClose, onNavigate }) {
       "
         />
       </div>
-
-      <button
-        onClick={onClose}
-        className="
+      <div onClick={(e) => e.stopPropagation()}>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            setToastOpen((prev) => !prev);
+          }}
+          className="
       fixed top-12 right-9
       z-40
       text-[#B89B5E]
       hover:opacity-80
       transition cursor-pointer
     "
-        aria-label="Close Menu"
-      >
-        <IoCloseOutline size={30} />
-      </button>
+        >
+          <LuShare size={28} />
+        </button>
+        {toastOpen && (
+          <Toast isOpen={toastOpen} onClose={() => setToastOpen(false)} />
+        )}
+        <button
+          onClick={onClose}
+          className="
+      fixed top-12 left-10
+      z-40
+      text-[#B89B5E]
+      hover:opacity-80
+      transition cursor-pointer
+    "
+          aria-label="Close Menu"
+        >
+          <IoCloseOutline size={30} />
+        </button>
+      </div>
 
       <div
         className="relative z-30 h-full flex items-center justify-center"
-        onClick={(e) => e.stopPropagation()}
+        onClick={() => {
+          if (toastOpen) setToastOpen(false);
+        }}
       >
         <div className="flex flex-col items-center gap-10 text-center">
           {menuItems.map((item) => (
