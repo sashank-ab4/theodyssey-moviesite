@@ -3,6 +3,7 @@ import useMovieDetails from "../Hooks/useMovieDetails";
 import { OFFICIAL_POSTER, SEC_ACT_POSTER } from "../Utils/mockData";
 import Modal from "./Modal";
 import OverviewShimmer from "./OverviewShimmer";
+import StarRating from "./Rating";
 
 export default function SecondAct() {
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
@@ -71,6 +72,7 @@ export default function SecondAct() {
           rounded-3xl
           border border-[#B89B5E]
           text-[#e5e7eb]
+         hover:text-black
           font-semibold
           tracking-wide
           transition-all duration-300
@@ -79,7 +81,7 @@ export default function SecondAct() {
                 >
                   Watch Trailer
                 </button>
-
+                <StarRating className="w-full lg:w-auto" />
                 <button
                   onClick={addToCalendar}
                   className="
@@ -88,6 +90,7 @@ export default function SecondAct() {
           rounded-3xl
           border border-[#cc0809]
           text-[#e5e7eb]
+          hover:text-black
           font-semibold
           tracking-wide
           transition-all duration-300
