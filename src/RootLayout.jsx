@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "../Components/Navbar";
 import HeroSec from "../Components/HeroSec";
 import SecondAct from "../Components/SecondAct";
@@ -9,6 +10,7 @@ import CrewTab from "../Components/CrewTab";
 import Synopsis from "../Components/Synopsis";
 import GalleryTab from "../Components/GalleryTab";
 import NetworkError from "../Components/NetWorkError";
+import { track } from "@vercel/analytics";
 
 const RootLayout = () => {
   /* const [isMenuOpen, setIsMenuOpen] = useState(false); */
@@ -20,13 +22,14 @@ const RootLayout = () => {
     return setCurrentView(view);
   };
   const showFooter = pagesWithFooter.includes(currentView);
+  useEffect(() => {
+    track("page_view", { page: currentView });
+  }, [currentView]);
   return (
     <>
       <NetworkError />
 
       <div className="min-h-screen flex flex-col bg-[#05060A] text-white overflow-x-hidden">
-        {/* MAIN CONTENT */}
-
         <main className="flex-grow">
           {currentView === "home" && (
             <Navbar onMenuClick={() => navigateTo("menu")} />
@@ -64,8 +67,8 @@ const RootLayout = () => {
           )}
         </main>
 
-        {/* FOOTER */}
         {showFooter && <ThirdAct />}
+        <Analytics />
       </div>
     </>
   );

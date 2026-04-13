@@ -23,33 +23,33 @@ export default function Toast({ isOpen }) {
   const pageURL = encodeURIComponent(window.location.href);
   const SHARE_URLS = [
     {
-      label: "facebook",
+      label: "Facebook",
       url: `https://www.facebook.com/sharer/sharer.php?u=${pageURL}`,
       icon: <FaFacebookF size={20} />,
     },
     {
-      label: "whatsapp",
-      url: `https://wa.me/?text=%20${pageURL}`,
+      label: "WhatsApp",
+      url: `https://wa.me/?text=${pageURL}`,
       icon: <FaWhatsapp size={20} />,
     },
     {
       label: "X",
-      url: `https://www.facebook.com/sharer/sharer.php?u=${pageURL}`,
+      url: `https://twitter.com/intent/tweet?url=${pageURL}`,
       icon: <FaXTwitter size={20} />,
     },
     {
-      label: "reddit",
-      url: `https://www.facebook.com/sharer/sharer.php?u=${pageURL}`,
+      label: "Reddit",
+      url: `https://www.reddit.com/submit?url=${pageURL}`,
       icon: <PiRedditLogoThin size={20} />,
     },
     {
-      label: "telegram",
-      url: `https://t.me/share/url?url=${pageURL}&text`,
+      label: "Telegram",
+      url: `https://t.me/share/url?url=${pageURL}`,
       icon: <PiTelegramLogoLight size={20} />,
     },
     {
-      label: "email",
-      url: `mailto:?subject=${"Check this out"}&body=${pageURL}`,
+      label: "Email",
+      url: `mailto:?subject=Check this out&body=${pageURL}`,
       icon: <GoMail size={20} />,
     },
   ];
