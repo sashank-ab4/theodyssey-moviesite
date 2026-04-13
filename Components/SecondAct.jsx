@@ -4,6 +4,7 @@ import { OFFICIAL_POSTER, SEC_ACT_POSTER } from "../Utils/mockData";
 import Modal from "./Modal";
 import OverviewShimmer from "./OverviewShimmer";
 import StarRating from "./Rating";
+import { track } from "@vercel/analytics";
 
 export default function SecondAct() {
   const [isTrailerOpen, setIsTrailerOpen] = useState(false);
@@ -45,7 +46,6 @@ export default function SecondAct() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-[25vh]">
             <div className="grid grid-cols-1 lg:grid-cols-[auto_260px_1fr] gap-12 lg:gap-20 items-center">
-              {/* LEFT — POSTER */}
               <div className="flex justify-center lg:justify-start">
                 <img
                   src={OFFICIAL_POSTER}
@@ -61,10 +61,15 @@ export default function SecondAct() {
                 />
               </div>
 
-              {/* MIDDLE — BUTTON COLUMN */}
               <div className="flex flex-col gap-6 justify-center items-center lg:items-start">
                 <button
-                  onClick={() => setIsTrailerOpen(true)}
+                  onClick={() => {
+                    track("trailer_opened", {
+                      movie: "The Odyssey",
+                      section: "SecondAct",
+                    });
+                    setIsTrailerOpen(true);
+                  }}
                   alt="Movie-Trailer"
                   className="
           w-full lg:w-auto
@@ -105,8 +110,6 @@ export default function SecondAct() {
                   onClose={() => setIsTrailerOpen(false)}
                 />
               </div>
-
-              {/* right-overview-part */}
 
               <div className="relative pl-0 lg:pl-8">
                 <span className="hidden lg:block absolute left-0 top-0 h-full w-px bg-[#B89B5E]/40" />
